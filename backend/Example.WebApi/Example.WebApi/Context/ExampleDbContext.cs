@@ -5,8 +5,8 @@ namespace Example.WebApi.Context
 {
     internal interface IExampleDbContext
     {
-        DbSet<Satellite> Satellites { get; set; }
-        DbSet<User> Users { get; set; }
+        DbSet<Satellite> Satellites { get; }
+        DbSet<User> Users { get; }
     }
 
     internal class ExampleDbContext : DbContext, IExampleDbContext

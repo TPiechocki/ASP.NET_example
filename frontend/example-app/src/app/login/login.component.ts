@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService as AuthServiceBackend } from '@example/webapi-contract';
+import { AuthService as AuthServiceBackend, LoginContract } from '@example/webapi-contract';
 
 import { AuthService } from '../auth.service';
 
@@ -11,10 +11,9 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  model: any = {};
+  model: LoginContract = new LoginContract();
 
   constructor(
-    private router: Router,
     private authServiceBackend: AuthServiceBackend,
     private authService: AuthService
   ) {}

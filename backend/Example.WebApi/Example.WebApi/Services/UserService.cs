@@ -15,16 +15,16 @@ namespace Example.WebApi.Services
 
     internal class UserService : IUserService
     {
-        private readonly ExampleDbContext context;
+        private readonly ExampleDbContext _context;
 
         public UserService(ExampleDbContext context)
         {
-            this.context = context;
+            this._context = context;
         }
 
         public async Task<bool> VerifyLogin(LoginContract login, CancellationToken cancellationToken)
         {
-            var user = await context.Users.SingleOrDefaultAsync(u => u.UserName == login.UserName, cancellationToken);
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName == login.UserName, cancellationToken);
 
             if (user == null)
             {

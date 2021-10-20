@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { SatellitesComponent } from './satellites/satellites.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { SatellitesObsoleteComponent } from './satellites-obsolete/satellites-obsolete.component';
 
@@ -16,7 +15,6 @@ import { SatellitesObsoleteComponent } from './satellites-obsolete/satellites-ob
     AppComponent,
     SatellitesComponent,
     LoginComponent,
-    DashboardComponent,
     SatellitesObsoleteComponent
    ],
   imports: [

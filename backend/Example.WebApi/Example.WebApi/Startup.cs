@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using NSwag.Generation.Processors;
 using System.Text;
 using Example.WebApi.Config;
+using Microsoft.Extensions.Options;
 
 namespace Example.WebApi
 {
@@ -36,7 +37,7 @@ namespace Example.WebApi
                 Configuration.Bind(ExampleConfig.ConfigurationPrefix, exampleConfig);
                 Validator.ValidateObject(exampleConfig, new ValidationContext(exampleConfig), true);
             });
-            services.AddSingleton<IExampleConfig, ExampleConfig>();
+            services.AddSingleton<IExampleConfig, ExampleConfig>(provider => provider.GetRequiredService<IOptions<ExampleConfig>>().Value);
 
             // Database
             services.AddDbContext<ExampleDbContext>(options =>
