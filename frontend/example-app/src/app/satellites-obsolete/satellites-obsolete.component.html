@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let satellite of satellites">
+      <th scope="row">{{satellite.satelliteId}}</th>
+      <td>{{satellite.name}}</td>
+      <td>{{satellite.country}}</td>
+    </tr>
+  </tbody>
+</table>

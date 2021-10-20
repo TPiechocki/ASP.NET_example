@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand">Example App</a>
+      <div class="collapse navbar-collapse" *ngIf="isLoggedIn$ | async">
+        <div class="navbar-nav" routerLinkActive="active">
+          <a class="nav-link" routerLink="satellites">Satellites</a>
+          <a class="nav-link" routerLink="satellites-obsolete">Satellites-obsolete</a>
+        </div>
+      </div>
+  </div>
+
+  <div class="logout" *ngIf="isLoggedIn$ | async">
+    <button (click)="onLogout()">Logout</button>
+  </div>
+</nav>
+
+<div class="subpage">
+  <router-outlet></router-outlet>
+</div>
